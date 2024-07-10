@@ -6,7 +6,7 @@ internal class GameHelp
     private string[] _gameMoves;
     private int _totalMoves;
     private ConsoleTable _table;
-    const int _pageSize = 10;
+    const int _pageSize = 5;
     public GameHelp(string[] moves)
     {
         _gameMoves = moves;
@@ -51,17 +51,18 @@ internal class GameHelp
         int currentPage = 1;
         int totalPages = (int)Math.Ceiling((double)_totalMoves / _pageSize);
 
+        _table.Columns.Clear();
         setHeader();
 
         while(true)
         {
             int startRow = (currentPage - 1) * _pageSize;
-            int endRow = Math.Min(startRow + _pageSize, _totalMoves - 1);
-
+            int endRow = Math.Min(startRow + _pageSize - 1, _totalMoves - 1);
+            _table.Rows.Clear();
             setRows(startRow, endRow);
 
             _table.Write();
-            Console.WriteLine($"Page {currentPage} of {totalPages}");
+            Console.WriteLine($"Page {currentPage} of {totalPages} \t Page size: {_pageSize}");
 
             Console.Write("Press:");
             if (currentPage == 1)
@@ -73,7 +74,7 @@ internal class GameHelp
             Console.ResetColor();
             if(currentPage == totalPages)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.DarkGray;
             }
             Console.Write("\t n: Next page");
 
@@ -93,7 +94,7 @@ internal class GameHelp
             }
             else if(key.Key == ConsoleKey.Q)
             {
-                Console.WriteLine();
+                Console.WriteLine("\n");
                 break;
             }
         }

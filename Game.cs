@@ -63,29 +63,23 @@ class Game
             {
                 ui.DisplayErrorMessage($"Invalid input. Correct input are {0} to {totalMoves} and ?. Try again");
                 ui.DisplayMenu();
-
             }
         }
+        Console.WriteLine("\n");
     }
 
     public static void Main(string[] argc)
     {
-        string[] m = { "rock", "paper", "scissor" };
-        System.Console.WriteLine("len = " + argc.Length);
-        if(argc.Length % 2 == 0 || argc.Length < 3) {
+
+        if (argc.Length % 2 == 0 || argc.Length < 3)
+        {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Number of moves must be odd and greater than 1 \n");
             Console.ResetColor();
             return;
-        } 
+        }
         Game game = new Game();
         game.Play(argc);
-        // int tcase = 10;
-        // var r = new Random();
-        // while(tcase -- > 0)
-        // {
-        //     Console.WriteLine(r.Next(0, 3));
-        // }
         
     }
 }

@@ -42,12 +42,12 @@ namespace Task3_Game
         }
         public void DisplayComputerMove(string move)
         {
-            Console.WriteLine("Computer's move: " + move);
+            Console.WriteLine("Computer move: " + move);
         }
         public void DisplayHMACKey(string hmacKey)
         {
             Console.Write("HMAC Key: ");
-            DisplayColoredText(hmacKey, ConsoleColor.Cyan);
+            DisplayColoredText(hmacKey, ConsoleColor.DarkMagenta);
         }
 
         public void DisplayResult(string result)
@@ -65,6 +65,7 @@ namespace Task3_Game
 
         public void DisplayHelp()
         {
+            DisplayColoredText("Here are the outcomes of your moves against the computer:", ConsoleColor.Blue);
             _help.DisplayHelp();
         }
 
