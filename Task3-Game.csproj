@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ConsoleTables" Version="2.6.1" />
     <PackageReference Include="SHA3.Net" Version="2.0.0" />
   </ItemGroup>
 
