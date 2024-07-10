@@ -10,7 +10,7 @@ internal class GameHelp
         _gameMoves = moves;
         _totalMoves = moves.Length;
     }
-    public void ShowHintsTable()
+    public void DisplayHelp()
     {
         var header = new string[] { @"v PC \ User >" };
         header = header.Concat(_gameMoves).ToArray();
