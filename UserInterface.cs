@@ -42,7 +42,7 @@ namespace Task3_Game
         }
         public void DisplayComputerMove(string move)
         {
-            Console.WriteLine("Computer move: " + move);
+            Console.WriteLine("Computer's move: " + move);
         }
         public void DisplayHMACKey(string hmacKey)
         {
@@ -52,10 +52,10 @@ namespace Task3_Game
 
         public void DisplayResult(string result)
         {
-            Console.Write("Result :");
+            Console.Write("Result : ");
             if (result.ToLower() == "draw")
             {
-                Console.WriteLine("Game draw");
+                Console.WriteLine(result);
             }
             else
             {

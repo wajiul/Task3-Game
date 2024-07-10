@@ -31,7 +31,7 @@ namespace Task3_Game
 
         public string GetHMAC(string message, byte[] key)
         {
-            using (var hmacsha3 = new HMACSHA3_256(key))
+            using (var hmacsha3 = new HMACSHA256(key))
             {
                 var hash = hmacsha3.ComputeHash(Encoding.UTF8.GetBytes(message));
                 return Convert.ToHexString(hash);
